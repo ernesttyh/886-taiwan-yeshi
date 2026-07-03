@@ -64,25 +64,25 @@ export default function ReservationPage() {
   return (
     <>
       {/* Banner */}
-      <section className="relative w-full h-[350px] overflow-hidden">
+      <section className="relative w-full h-[200px] sm:h-[350px] md:h-[450px] lg:h-[550px]">
         <img
-          src="/images/moodshot-2.jpg"
+          src="/images/menu-hero-banner.png"
           alt="Reservation banner"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full"
         />
-        <div className="absolute inset-0 bg-black/30" />
+        {/* <div className="absolute inset-0 bg-black/30" /> */}
       </section>
 
       {/* Reservation Form */}
-      <section className="bg-cream py-16 px-6">
-        <div className="max-w-2xl mx-auto">
+      <section className="bg-[#FFFADC] py-16 px-6">
+        <div className="max-w-[1000px] mx-auto">
           {/* Heading */}
           <div className="text-center mb-12">
             <h1 className="inline-block">
-              <span className="font-playfair italic font-bold text-navy text-4xl md:text-5xl">
+              <span className="font-dincondensed font-bold text-[#FFFADC] text-5xl sm:text-6xl md:text-7xl lg:text-[90px] leading-none mb-3 text-center mr-2">
                 RESERVATIONS
               </span>
-              <span className="text-navy text-3xl md:text-4xl ml-3">预 定</span>
+              <span className="text-navy font-aaHongYunShouShu font-bold text-5xl sm:text-6xl md:text-7xl lg:text-[90px] leading-none mb-3 text-center">预 定</span>
             </h1>
             <div className="w-48 h-1 bg-red-brand mx-auto mt-3" />
           </div>
@@ -175,7 +175,7 @@ export default function ReservationPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="font-bebas bg-red-brand text-white px-12 py-3 text-xl tracking-[3px] rounded hover:bg-red-700 transition disabled:opacity-50"
+                  className="w-full sm:w-auto text-center font-dincondensed font-bold bg-[#053176] text-[#FFFADC] px-8 py-3 text-base sm:text-lg tracking-[2px] transition hover:opacity-90"
                 >
                   {submitting ? "SUBMITTING..." : "SUBMIT NOW"}
                 </button>

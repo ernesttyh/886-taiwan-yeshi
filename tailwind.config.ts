@@ -17,6 +17,12 @@ const config: Config = {
       fontFamily: {
         bebas: ["var(--font-bebas-neue)", "sans-serif"],
         playfair: ["var(--font-playfair-display)", "serif"],
+        poppins: ["var(--font-poppins-display)", "serif"],
+        inter: ["var(--font-inter-display)", "serif"],
+        din: ["DIN", "sans-serif"],
+        dinBlack: ["DIN Black", "sans-serif"],
+        aaHongYunShouShu: ["AaHongYunShouShu", "sans-serif"],
+        dincondensed: ["DIN Condensed", "sans-serif"],
       },
     },
   },

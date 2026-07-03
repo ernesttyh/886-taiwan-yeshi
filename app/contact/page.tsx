@@ -2,55 +2,55 @@ export default function ContactPage() {
   return (
     <>
       {/* Banner */}
-      <section className="relative w-full h-[400px] md:h-[500px]">
+      <section className="relative w-full h-[260px] sm:h-[450px] md:h-[650px] lg:h-[895px]">
         <img
-          src="/images/886-contact.jpg"
+          src="/images/886 contact image.png"
           alt="886 Taiwan Yè Shì interior"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-start justify-center pt-12 md:pt-16">
-          <h1 className="font-bebas text-white text-5xl md:text-7xl tracking-[4px] text-center drop-shadow-lg">
-            886 TAIWAN YÈ SHÌ
-          </h1>
-        </div>
       </section>
 
       {/* Info Section */}
-      <section className="bg-red-brand py-14 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-white text-center">
+      <section className="bg-red-brand py-10 sm:py-14 px-5 sm:px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 items-center text-white">
+
           {/* Address */}
-          <div>
-            <h3 className="font-bebas text-2xl tracking-[2px] mb-3">
-              Address
+          <div className="order-2 md:order-1 text-center md:text-right">
+            <h3
+              className="font-poppins text-[#FFFADC] text-lg sm:text-xl md:text-2xl tracking-[1px] md:tracking-[2px] leading-relaxed"
+            >
+              Address:
+              <br />
+              65 Changi Airport Terminal 3
+              <br />
+              #B2-40/40A,
+              <br />
+              Singapore 819663
             </h3>
-            <p className="font-playfair text-white/90 leading-relaxed">
-              65 Airport Boulevard,
-              <br />
-              Changi Airport, B2-40/40A
-              <br />
-              Terminal 3
-            </p>
           </div>
 
           {/* Visit Us */}
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="font-playfair font-bold italic text-white text-4xl md:text-5xl mb-2">
+          <div className="order-1 md:order-2 flex flex-col items-center justify-center">
+            <h2
+              className="font-dincondensed font-bold text-[#FFFADC] text-5xl sm:text-6xl md:text-7xl lg:text-[140px] leading-none mb-3 text-center"
+            >
               VISIT US
             </h2>
-            <div className="w-32 h-1 bg-white" />
+
+            <div className="w-32 sm:w-40 md:w-full h-1 bg-[#FFFADC]"/>
           </div>
 
           {/* Hours */}
-          <div>
-            <h3 className="font-bebas text-2xl tracking-[2px] mb-3">Hours</h3>
-            <p className="font-playfair text-white/90 leading-relaxed">
-              Monday - Friday: 11:00 AM - 11:00 PM
+          <div className="order-3 text-center md:text-left">
+            <h3 className="font-poppins text-[#FFFADC] text-lg sm:text-xl md:text-2xl tracking-[1px] md:tracking-[2px] leading-relaxed">
+              Hours:
               <br />
-              Saturday - Sunday: 10:00 AM - 12:00 AM
+              Daily
               <br />
-              Closed: Every 2nd Monday
-            </p>
+              10:30 AM – 10:30 PM
+            </h3>
           </div>
+
         </div>
       </section>
     </>

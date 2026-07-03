@@ -3,34 +3,52 @@ import Link from "next/link";
 export default function PromotionsPage() {
   return (
     <section className="bg-cream py-16 px-6">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[1400px] w-full mx-auto">
         {/* Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 md:mb-16">
+          <div className="inline-flex gap-2 sm:gap-3">
+            {/* Red Heading */}
+            <div className="inline-block">
+              <h1 className="font-dincondensed font-bold text-[#CE2C20] text-4xl sm:text-5xl md:text-7xl lg:text-[100px] tracking-[2px] leading-none">
+                PROMOTIONS
+              </h1>
+
+              <div className="h-[3px] bg-[#CE2C20] w-full mt-2" />
+            </div>
+
+            {/* Chinese Text */}
+            <span className="text-[#053176] text-3xl sm:text-4xl md:text-7xl lg:text-[90px] tracking-[2px] font-aaHongYunShouShu font-bold leading-none">
+              限时优惠
+            </span>
+          </div>
+        </div>
+        {/*  */}
+        {/* <div className="text-center mb-12">
           <h1 className="inline-block">
-            <span className="font-playfair italic font-bold text-navy text-4xl md:text-5xl">
+            <span className="font-dincondensed font-bold text-[#CE2C20] text-4xl sm:text-5xl md:text-7xl lg:text-[100px] tracking-[2px] inline">
               PROMOTIONS
             </span>
-            <span className="text-navy text-3xl md:text-4xl ml-3">
+            <span className="text-[#053176] text-3xl sm:text-4xl md:text-7xl lg:text-[90px] tracking-[2px] ml-2 sm:ml-3 font-aaHongYunShouShu font-bold">
               限时优惠
             </span>
           </h1>
           <div className="w-48 h-1 bg-red-brand mx-auto mt-3" />
-        </div>
+        </div> */}
 
         {/* Images Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <div className="overflow-hidden rounded-xl">
+          <div className="overflow-hidden">
             <img
-              src="/images/promo-poster.jpg"
+              src="/images/PROMOTIONS 1.png"
               alt="Taiwanese Street Food Favourites"
-              className="w-full h-full object-cover rounded-xl"
+              className="w-full h-full object-cover"
             />
           </div>
-          <div className="overflow-hidden rounded-xl">
+          <div className="overflow-hidden">
             <img
-              src="/images/moodshot-3.jpg"
+              src="/images/PROMOTIONS 2.png"
               alt="Chopstick rice cutlet"
-              className="w-full h-full object-cover rounded-xl"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -38,14 +56,16 @@ export default function PromotionsPage() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="/contact"
-            className="font-bebas bg-red-brand text-white px-8 py-3 text-lg tracking-[2px] rounded hover:bg-red-700 transition"
+              href="/contact"
+              className="w-full sm:w-auto text-center font-dincondensed font-bold bg-[#053176] text-[#FFFADC] px-8 py-3 text-base sm:text-lg tracking-[2px] transition hover:opacity-90 "
           >
             VISIT US
           </Link>
+
           <Link
-            href="/menu"
-            className="font-bebas border-2 border-navy text-navy px-8 py-3 text-lg tracking-[2px] rounded hover:bg-navy hover:text-white transition"
+            href="https://drive.google.com/file/d/1HwrvWIG6y46W9ceXwAOq17yKMj8rnUCH/view?usp=sharing"
+            target="_blank"
+            className=" w-full sm:w-auto text-center font-dincondensed font-bold bg-[#CE2C20] text-[#FFFADC] px-8 py-3 text-base sm:text-lg tracking-[2px] transition hover:opacity-90 "
           >
             VIEW FULL MENU
           </Link>

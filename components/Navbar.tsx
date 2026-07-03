@@ -2,32 +2,39 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const pathname = usePathname();
+
+  const isWhiteTheme =
+    pathname === "/menu" ||
+    pathname === "/promotions";
+
   return (
-    <nav className="bg-red-brand w-full z-50 relative">
-      <div className="max-w-7xl mx-auto px-4">
+    <nav className={`${isWhiteTheme ? "bg-[#FFFADC]" : "bg-red-brand" } w-full z-50 relative`}>
+      <div className="max-w-[1400px] mx-auto px-4">
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center justify-center py-3 gap-8">
+        <div className="hidden md:flex items-center justify-center py-4 gap-8">
           {/* Left Links */}
           <div className="flex items-center gap-6">
             <Link
               href="/#our-story"
-              className="font-bebas text-white text-lg tracking-[2px] hover:opacity-80 transition"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px] hover:opacity-80 transition`}
             >
               ABOUT
             </Link>
             <Link
               href="/menu"
-              className="font-bebas text-white text-lg tracking-[2px] hover:opacity-80 transition"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px] hover:opacity-80 transition`}
             >
               MENU
             </Link>
             <Link
               href="/contact"
-              className="font-bebas text-white text-lg tracking-[2px] hover:opacity-80 transition"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px] hover:opacity-80 transition`}
             >
               CONTACT
             </Link>
@@ -35,10 +42,10 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="text-center mx-8">
-            <div className="font-bebas text-white text-5xl leading-none">
+            <div className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#CE2C20]" : "text-[#FFFADC]" } text-[56px] leading-none`}>
               886
             </div>
-            <div className="font-bebas text-white text-sm tracking-[3px] leading-tight">
+            <div className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#CE2C20]" : "text-[#FFFADC]" } text-[18px] tracking-[3px] leading-tight`}>
               TAIWAN YÈ SHÌ
             </div>
           </Link>
@@ -47,13 +54,13 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             <Link
               href="/promotions"
-              className="font-bebas text-white text-lg tracking-[2px] hover:opacity-80 transition"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px] hover:opacity-80 transition`}
             >
               PROMOTIONS
             </Link>
             <Link
               href="/reservation"
-              className="font-bebas text-white text-lg tracking-[2px] hover:opacity-80 transition"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px] hover:opacity-80 transition`}
             >
               RESERVATION
             </Link>
@@ -63,16 +70,16 @@ export default function Navbar() {
         {/* Mobile Nav */}
         <div className="md:hidden flex items-center justify-between py-3">
           <Link href="/" className="text-center">
-            <div className="font-bebas text-white text-3xl leading-none">
+            <div className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#CE2C20]" : "text-[#FFFADC]" } text-3xl leading-none`}>
               886
             </div>
-            <div className="font-bebas text-white text-[10px] tracking-[2px] leading-tight">
+            <div className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#CE2C20]" : "text-[#FFFADC]" } text-[10px] tracking-[2px] leading-tight`}>
               TAIWAN YÈ SHÌ
             </div>
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-white p-2"
+            className={`${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } p-2"`}
             aria-label="Toggle menu"
           >
             <svg
@@ -106,35 +113,35 @@ export default function Navbar() {
             <Link
               href="/#our-story"
               onClick={() => setMobileOpen(false)}
-              className="font-bebas text-white text-lg tracking-[2px]"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px]`}
             >
               ABOUT
             </Link>
             <Link
               href="/menu"
               onClick={() => setMobileOpen(false)}
-              className="font-bebas text-white text-lg tracking-[2px]"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px]`}
             >
               MENU
             </Link>
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="font-bebas text-white text-lg tracking-[2px]"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px]`}
             >
               CONTACT
             </Link>
             <Link
               href="/promotions"
               onClick={() => setMobileOpen(false)}
-              className="font-bebas text-white text-lg tracking-[2px]"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px]`}
             >
               PROMOTIONS
             </Link>
             <Link
               href="/reservation"
               onClick={() => setMobileOpen(false)}
-              className="font-bebas text-white text-lg tracking-[2px]"
+              className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px]`}
             >
               RESERVATION
             </Link>

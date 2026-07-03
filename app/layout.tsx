@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Playfair_Display } from "next/font/google";
+import { Bebas_Neue, Playfair_Display, Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -19,6 +19,22 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins-display",
+  display: "swap",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter-display",
+  display: "swap",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
   title: "886 Taiwan Yè Shì",
   description:
@@ -33,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bebasNeue.variable} ${playfairDisplay.variable}`}
+      className={`${bebasNeue.variable} ${playfairDisplay.variable} ${poppins.variable} ${inter.variable}`}
     >
       <body className="font-playfair bg-cream">
         <Navbar />
