@@ -16,6 +16,7 @@ Website for 886 Taiwan Yè Shì — a Taiwanese street food restaurant.
 |------|-------|-------------|
 | Home | `/` | Hero banner, Our Story preview, gallery |
 | Menu | `/menu` | Full food menu with 5 categories |
+| Our Story | `/our-story` | Restaurant story and heritage |
 | Reservations | `/reservation` | Booking form (saves to Supabase) |
 | Promotions | `/promotions` | Current promos |
 | Contact | `/contact` | Address, hours, contact info |
