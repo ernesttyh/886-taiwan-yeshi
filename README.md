@@ -42,3 +42,5 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ## Live Site
 
 [886-taiwan-yeshi.vercel.app](https://886-taiwan-yeshi.vercel.app)
+
+<!-- Last deployed: 2026-07-13 -->
