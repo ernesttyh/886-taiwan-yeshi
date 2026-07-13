@@ -58,12 +58,12 @@ export default function Navbar() {
             >
               PROMOTIONS
             </Link>
-            <Link
+            {/* <Link
               href="/reservation"
               className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px] hover:opacity-80 transition`}
             >
               RESERVATION
-            </Link>
+            </Link> */}
           </div>
         </div>
 
@@ -138,13 +138,13 @@ export default function Navbar() {
             >
               PROMOTIONS
             </Link>
-            <Link
+            {/* <Link
               href="/reservation"
               onClick={() => setMobileOpen(false)}
               className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#053176]" : "text-[#FFFADC]" } text-[22px] tracking-[2px]`}
             >
               RESERVATION
-            </Link>
+            </Link> */}
           </div>
         )}
       </div>
