@@ -36,7 +36,14 @@ export default function PromotionsPage() {
         </div> */}
 
         {/* Images Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="overflow-hidden">
+            <img
+              src="/images/promotions-new-image.png"
+              alt="Taiwanese Street Food Favourites"
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div className="overflow-hidden">
             <img
               src="/images/886 Opening promo_somec_FA.jpg"
@@ -44,13 +51,6 @@ export default function PromotionsPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          {/* <div className="overflow-hidden">
-            <img
-              src="/images/PROMOTIONS 2.png"
-              alt="Chopstick rice cutlet"
-              className="w-full h-full object-cover"
-            />
-          </div> */}
         </div>
 
         {/* Buttons */}
