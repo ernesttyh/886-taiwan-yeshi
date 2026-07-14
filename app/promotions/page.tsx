@@ -39,7 +39,7 @@ export default function PromotionsPage() {
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-12">
           <div className="overflow-hidden">
             <img
-              src="/images/promotions-new-image.png"
+              src="/images/886 Opening promo_somec_FA.jpg"
               alt="Taiwanese Street Food Favourites"
               className="w-full h-full object-cover"
             />
