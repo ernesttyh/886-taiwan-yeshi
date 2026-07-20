@@ -6,7 +6,7 @@ export default function HomePage() {
       {/* Hero Banner */}
       <section className="relative w-full h-[450px] sm:h-[600px] md:h-[895px]">
         <img
-          src="/images/hero-food.jpg"
+          src="/images/NEW 886 banner home.png"
           alt="Hero food"
           className="w-full h-full object-cover"
         />

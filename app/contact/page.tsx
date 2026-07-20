@@ -4,7 +4,7 @@ export default function ContactPage() {
       {/* Banner */}
       <section className="relative w-full h-[260px] sm:h-[450px] md:h-[650px] lg:h-[895px]">
         <img
-          src="/images/886 contact image.png"
+          src="/images/886_WebsiteBanner_1764x995px.jpg"
           alt="886 Taiwan Yè Shì interior"
           className="w-full h-full object-cover"
         />
