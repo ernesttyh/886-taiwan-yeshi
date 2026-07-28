@@ -18,7 +18,7 @@ const laMain: MenuItem[] = [
 const rice: MenuItem[] = [
   { image: "rice-1.png", name: "Signature XO Fried Rice" },
   { image: "rice-2.png", name: "Lu Rou Fan (Beef)" },
-  { image: "rice-3.png", name: "Chicken Sesame Rice" },
+  { image: "rice-3.png", name: "Scallion Oil Chicken Rice" },
   { image: "rice-4.png", name: "Spam Egg Rice" },
   { image: "rice-5.png", name: "Shrimp Egg Rice" },
   { image: "rice-6.png", name: "Chicken Cutlet Egg Rice" },
@@ -31,8 +31,8 @@ const vegetables: MenuItem[] = [
 ];
 
 const snacks: MenuItem[] = [
-  { image: "snack-1.png", name: "Chicken Xiao Long Bao" },
-  { image: "snack-2.png", name: "Mala Xiao Long Bao" },
+  // { image: "snack-1.png", name: "Chicken Xiao Long Bao" },
+  // { image: "snack-2.png", name: "Mala Xiao Long Bao" },
   { image: "snack-3.png", name: "Assorted Deep Fried Xiao Long Bao" },
   { image: "snack-4.png", name: "Taiwan Sweet Potato Ball" },
   { image: "snack-5.png", name: "XXL Fried Chicken" },
