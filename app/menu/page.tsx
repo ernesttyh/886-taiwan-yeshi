@@ -217,7 +217,7 @@ export default function MenuPage() {
             </Link>
 
             <Link
-              href="https://drive.google.com/file/d/1HwrvWIG6y46W9ceXwAOq17yKMj8rnUCH/view?usp=sharing"
+              href="https://drive.google.com/file/d/1ky1Y-EAGzIsIJ2BK4m8e_unvueW0whm0/view"
               target="_blank"
               className=" w-full sm:w-auto text-center font-dincondensed font-bold bg-[#CE2C20] text-[#FFFADC] px-8 py-3 text-base sm:text-lg tracking-[2px] transition hover:opacity-90 "
             >
