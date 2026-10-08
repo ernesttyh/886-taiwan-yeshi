@@ -48,6 +48,8 @@ export default function ContactPage() {
               Daily
               <br />
               10:30 AM – 10:30 PM
+              <br />
+              Last order 9:30PM
             </h3>
           </div>
 
