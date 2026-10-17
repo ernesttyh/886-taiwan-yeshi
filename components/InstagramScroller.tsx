@@ -35,7 +35,7 @@ export function InstagramScroller({ children, label }: { children: ReactNode; la
 
   return (
     <div className="relative">
-      <ul ref={ref} aria-label={label} className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3.5 overflow-x-auto scroll-smooth px-4 pb-2 sm:mx-0 sm:gap-5 sm:px-0">
+      <ul ref={ref} aria-label={label} className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3.5 overflow-x-auto scroll-smooth scroll-pl-4 px-4 pb-2 sm:scroll-pl-0 sm:mx-0 sm:gap-5 sm:px-0">
         {children}
       </ul>
       <button type="button" aria-label="Previous posts" onClick={() => go(-1)} className={`${btn} -left-3 ${atStart ? "pointer-events-none opacity-0" : "opacity-100"}`}>
