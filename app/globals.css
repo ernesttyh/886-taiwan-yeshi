@@ -1,67 +1,84 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@font-face {
-  font-family: "DIN";
-  src: url("/fonts/DIN-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
+/* 886 Taiwan Yè Shì brand tokens — pulled from the live site's CSS and the brand kit */
+@theme {
+  --color-brand-red: #ce2c20;
+  --color-brand-red-dark: #b0251b;
+  --color-brand-navy: #053176;
+  --color-brand-navy-dark: #04255a;
+  --color-brand-cream: #fffadc;
+  --color-brand-cream-dark: #f6f0d4;
+  --color-brand-sand: #f0e6bf;
+  --color-brand-ink: #1e1a14;
+  --color-brand-muted: #4a4336;
+  --color-brand-maroon: #630503;
+  --color-brand-green: #1e7a45;
+
+  --font-display: var(--font-din), Impact, "Arial Narrow", sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", sans-serif;
+  --font-brush: var(--font-brush), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", serif;
+
+  --radius-card: 1.25rem;
 }
 
-@font-face {
-  font-family: "DIN";
-  src: url("/fonts/DIN-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-brand-cream text-brand-ink font-body antialiased;
+  }
+  ::selection {
+    background: var(--color-brand-red);
+    color: var(--color-brand-cream);
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-brand-navy);
+    outline-offset: 3px;
+  }
+  address {
+    font-style: normal;
+  }
 }
 
-@font-face {
-  font-family: "DIN";
-  src: url("/fonts/DIN-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
+@layer components {
+  .display {
+    @apply font-display font-bold uppercase tracking-[0.06em];
+  }
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-transparent px-7 font-display text-xl font-bold uppercase tracking-[0.08em] no-underline transition-colors;
+  }
+  .btn-red {
+    @apply bg-brand-red text-brand-cream hover:bg-brand-red-dark;
+  }
+  .btn-navy {
+    @apply bg-brand-navy text-brand-cream hover:bg-brand-navy-dark;
+  }
+  .btn-cream {
+    @apply bg-brand-cream text-brand-navy hover:bg-white;
+  }
+  .btn-ghost {
+    @apply border-brand-cream bg-transparent text-brand-cream hover:bg-brand-cream/15;
+  }
+  .btn-outline {
+    @apply border-brand-navy bg-transparent text-brand-navy hover:bg-brand-navy hover:text-brand-cream;
+  }
+  .cn-label {
+    @apply inline-block rounded-xl border-2 border-brand-red bg-brand-cream px-3 py-1 font-cn text-[15px] font-bold leading-tight text-brand-red;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-@font-face {
-  font-family: "DIN";
-  src: url("/fonts/DIN-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "DIN Black";
-  src: url("/fonts/DIN-BlackAlternate.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "AaHongYunShouShu";
-  src: url("/fonts/AaHongYunShouShu.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "DIN Condensed";
-  src: url("/fonts/D-DINCondensed.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "DIN Condensed";
-  src: url("/fonts/D-DINCondensed-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #FFF5E6;
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

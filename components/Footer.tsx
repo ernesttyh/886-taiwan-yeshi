@@ -1,89 +1,64 @@
-"use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { IconFacebook, IconInstagram, IconTikTok } from "./Icons";
+import { nav, site } from "@/lib/site";
 
-export default function Footer() {
-  const pathname = usePathname();
+const social = [
+  { href: site.social.instagram, label: "Instagram", Icon: IconInstagram },
+  { href: site.social.facebook, label: "Facebook", Icon: IconFacebook },
+  { href: site.social.tiktok, label: "TikTok", Icon: IconTikTok },
+];
 
-  const isWhiteTheme =
-    pathname === "/menu" ||
-    pathname === "/promotions";
+export function Footer() {
   return (
-    <footer className={`${isWhiteTheme ? "bg-red-brand" : "bg-[#FFFADC]" } py-6 px-5 sm:px-6`}>
-      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Left: Social */}
-        <div className=" flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
-          <div className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#FFFADC]" : "text-[#CE2C20]" } text-[36px] sm:text-[45px] md:text-[60px] leading-none`}>
-            Follow us
+    <footer className="bg-brand-navy pb-24 pt-12 text-brand-cream md:pb-7">
+      <div className="mx-auto flex max-w-6xl flex-col gap-9 px-4 sm:px-6">
+        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr] md:gap-10">
+          <div className="flex flex-col gap-4">
+            <div className="leading-none">
+              <span className="display block text-[52px] tracking-normal">886</span>
+              <span className="display mt-1 block text-[14px] tracking-[0.25em]">Taiwan Yè Shì</span>
+            </div>
+            <p className="max-w-sm text-[15px] leading-relaxed opacity-90">
+              Taiwanese night-market restaurant at Changi Airport Terminal 3, Singapore. {site.tagline}
+            </p>
+            <ul className="flex gap-2.5">
+              {social.map(({ href, label, Icon }) => (
+                <li key={label}>
+                  <a href={href} aria-label={label} target="_blank" rel="noopener" className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-red text-brand-cream hover:bg-brand-red-dark">
+                    <Icon size={22} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex gap-3">
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/886taiwanyeshisg/"
-              aria-label="Instagram"
-              className=" w-[42px] h-[42px] sm:w-[50px] sm:h-[50px] md:w-[55px] md:h-[55px] flex items-center justify-center hover:opacity-80 transition">
-              <svg width="69" height="67" viewBox="0 0 69 67" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${isWhiteTheme ? "text-[#FFFADC]" : "text-[#CE2C20]" }`}>
-                <path d="M67.9094 19.6245C67.8712 16.8328 67.3348 14.0688 66.3242 11.4562C65.4478 9.25252 64.1092 7.25117 62.394 5.58004C60.6788 3.90891 58.6247 2.60474 56.3629 1.75087C53.7159 0.782757 50.9194 0.259281 48.0927 0.202732C44.4532 0.0442327 43.2993 0 34.0606 0C24.8219 0 23.6378 2.47168e-07 20.0247 0.202732C17.1993 0.259696 14.4042 0.783166 11.7583 1.75087C9.49618 2.60415 7.44174 3.9081 5.72645 5.57931C4.01117 7.25052 2.67283 9.25217 1.79704 11.4562C0.80141 14.0332 0.265294 16.7571 0.211862 19.5102C0.0491822 23.0599 0 24.1841 0 33.1854C0 42.1867 -2.81874e-08 43.3368 0.211862 46.8606C0.268611 49.6178 0.802049 52.3381 1.79704 54.922C2.6743 57.1254 4.01364 59.1262 5.72949 60.7967C7.44535 62.4672 9.49998 63.7706 11.7621 64.6236C14.4007 65.6307 17.1963 66.1916 20.0285 66.2823C23.6718 66.4408 24.8257 66.4888 34.0644 66.4888C43.3031 66.4888 44.4873 66.4888 48.1003 66.2823C50.9269 66.2281 53.7235 65.7059 56.3704 64.7379C58.6317 63.883 60.6853 62.5785 62.4003 60.9075C64.1154 59.2365 65.4543 57.2357 66.3317 55.0326C67.3267 52.4523 67.8602 49.732 67.9169 46.9712C68.0796 43.4252 68.1288 42.301 68.1288 33.296C68.1212 24.2947 68.1212 23.152 67.9094 19.6245ZM34.0379 50.2075C24.3755 50.2075 16.5479 42.5811 16.5479 33.167C16.5479 23.7528 24.3755 16.1264 34.0379 16.1264C38.6765 16.1264 43.1252 17.9218 46.4052 21.1175C49.6852 24.3132 51.5279 28.6475 51.5279 33.167C51.5279 37.6864 49.6852 42.0208 46.4052 45.2165C43.1252 48.4122 38.6765 50.2075 34.0379 50.2075ZM52.224 19.4697C51.6883 19.4701 51.1577 19.3677 50.6627 19.1682C50.1677 18.9687 49.7179 18.676 49.3391 18.3069C48.9603 17.9378 48.6599 17.4996 48.4551 17.0173C48.2503 16.535 48.1452 16.0181 48.1457 15.4961C48.1457 14.9745 48.2511 14.4581 48.456 13.9762C48.6608 13.4943 48.9611 13.0565 49.3396 12.6877C49.7182 12.3189 50.1675 12.0263 50.6621 11.8267C51.1567 11.6271 51.6868 11.5244 52.2221 11.5244C52.7574 11.5244 53.2875 11.6271 53.7821 11.8267C54.2767 12.0263 54.7261 12.3189 55.1046 12.6877C55.4831 13.0565 55.7834 13.4943 55.9883 13.9762C56.1931 14.4581 56.2986 14.9745 56.2986 15.4961C56.2986 17.693 54.475 19.4697 52.224 19.4697Z" fill="currentColor"/>
-                <path d="M34.0372 44.2363C40.3118 44.2363 45.3983 39.2804 45.3983 33.1671C45.3983 27.0537 40.3118 22.0979 34.0372 22.0979C27.7626 22.0979 22.6761 27.0537 22.6761 33.1671C22.6761 39.2804 27.7626 44.2363 34.0372 44.2363Z" fill="currentColor"/>
-              </svg>
+          <nav aria-label="Footer" className="flex flex-col gap-2.5">
+            <span className="display text-lg tracking-[0.14em] opacity-70">Explore</span>
+            <Link href="/" className="text-brand-cream no-underline hover:underline">Home</Link>
+            {nav.map((n) => (
+              <Link key={n.href} href={n.href} className="text-brand-cream no-underline hover:underline">
+                {n.label}
+              </Link>
+            ))}
+            <Link href="/menu#drinks" className="text-brand-cream no-underline hover:underline">Bubble tea &amp; drinks</Link>
+          </nav>
+          <div className="flex flex-col gap-2.5">
+            <span className="display text-lg tracking-[0.14em] opacity-70">Visit</span>
+            <address className="leading-relaxed">
+              {site.address.street}, {site.address.unit}
+              <br />
+              {site.address.venue}
+              <br />
+              Singapore {site.address.postal}
+            </address>
+            <span>{site.hours.display}</span>
+            <a href={`tel:${site.phoneE164}`} className="font-semibold text-brand-cream no-underline hover:underline">
+              {site.phoneDisplay}
             </a>
-            {/* Facebook */}
-            <a
-              href="https://www.facebook.com/886taiwanyeshisg/"
-              aria-label="Facebook"
-              className=" w-[42px] h-[42px] sm:w-[50px] sm:h-[50px] md:w-[55px] md:h-[55px] flex items-center justify-center hover:opacity-80 transition">
-              <svg width="69" height="68" viewBox="0 0 69 68" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${isWhiteTheme ? "text-[#FFFADC]" : "text-[#CE2C20]" }`}>
-                <path d="M69 33.8757C69 15.1662 53.5546 0 34.5043 0C15.4454 0.00420816 0 15.1662 0 33.8799C0 50.7841 12.6168 64.7973 29.1057 67.339V43.6681H20.3525V33.8799H29.1144V26.4104C29.1144 17.9226 34.2672 13.2347 42.1451 13.2347C45.9224 13.2347 49.8678 13.8953 49.8678 13.8953V22.2275H45.5171C41.2353 22.2275 39.8986 24.8408 39.8986 27.5214V33.8757H49.4625L47.9361 43.6639H39.8943V67.3348C56.3832 64.7931 69 50.7799 69 33.8757Z" fill="currentColor"/>
-              </svg>
-
-            </a>
-            {/* WhatsApp */}
-            {/* <a
-              href="#"
-              aria-label="WhatsApp"
-              className="w-[42px] h-[42px] sm:w-[50px] sm:h-[50px] md:w-[55px] md:h-[55px] flex items-center justify-center hover:opacity-80 transition"
-            >
-              <svg width="70" height="67" viewBox="0 0 70 67" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${isWhiteTheme ? "text-[#FFFADC]" : "text-[#CE2C20]" }`}>
-                <path d="M35.0104 0.000103247C25.7292 0.00900439 16.8306 3.54039 10.2671 9.81946C3.70358 16.0985 0.0111863 24.6125 1.98983e-05 33.4933C-0.00701031 39.8166 1.84896 45.9784 5.35 51.3129L6.17957 52.5775L2.64338 64.9348L15.8953 61.6117L17.1678 62.3382C22.5636 65.3941 28.7193 67.0043 34.9894 67H34.9964C44.2747 66.9875 53.1693 63.4557 59.7307 57.1787C66.2921 50.9016 69.9849 42.3915 69.9998 33.5135C70.0159 29.1129 69.1194 24.753 67.3624 20.6862C65.6054 16.6194 63.0227 12.9265 59.7638 9.82137C56.5218 6.69906 52.6646 4.22328 48.4156 2.53742C44.1666 0.851561 39.6102 -0.0108612 35.0104 0.000103247ZM55.5949 47.8822C54.7161 50.2366 50.5121 52.3757 48.4944 52.665C46.2825 53.0299 44.012 52.894 41.8649 52.2681C39.8279 51.6645 37.8262 50.9572 35.8681 50.1491C25.3088 45.7901 18.4192 35.6257 17.8849 34.9463C17.3646 34.2736 13.5964 29.4841 13.5964 24.5331C13.5964 19.5754 16.3101 17.1402 17.2732 16.1312C17.6269 15.7489 18.0591 15.4404 18.543 15.2251C19.0268 15.0098 19.5519 14.8924 20.0853 14.88C20.7883 14.88 21.4843 14.8867 22.103 14.9136C22.7498 14.9405 23.6145 14.6782 24.4651 16.6424C25.3439 18.6605 27.453 23.6115 27.7131 24.116C27.9732 24.6138 28.149 25.2058 27.8045 25.8785C27.453 26.5579 27.2843 26.9682 26.75 27.5602C26.2297 28.1522 25.6462 28.8719 25.1752 29.3294C24.6479 29.8272 24.0996 30.372 24.7112 31.3811C25.3299 32.3834 27.4389 35.6863 30.5603 38.3569C34.5816 41.7876 37.9772 42.8437 39.0247 43.3549C40.0792 43.8527 40.6909 43.7787 41.3095 43.0993C41.9211 42.4199 43.9388 40.1597 44.6418 39.1574C45.3449 38.1483 46.0408 38.3165 47.011 38.6461C47.9741 38.9892 53.1484 41.4176 54.1959 41.9221C55.2364 42.4199 55.9464 42.6755 56.2136 43.0993C56.4666 43.5164 56.4666 45.5277 55.5949 47.8822Z" fill="currentColor"/>
-              </svg>
-            </a> */}
-            {/* Tiktok */}
-            <a
-              href="https://www.tiktok.com/@886taiwanyeshi"
-              aria-label="tiktok"
-              className=" w-[42px] h-[42px] sm:w-[50px] sm:h-[50px] md:w-[55px] md:h-[55px] flex items-center justify-center hover:opacity-80 transition">
-              <svg width="94" height="93" viewBox="0 0 94 93" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${isWhiteTheme ? "text-[#FFFADC]" : "text-[#CE2C20]" }`}>
-                 <path d="M25.0762 3.25672C32.4407 2.43387 40.1276 1.71387 47.9996 1.71387C55.8716 1.71387 63.5584 2.43387 70.923 3.25672C76.5205 3.89856 81.7347 6.42042 85.7131 10.41C89.6915 14.3996 92.1986 19.6208 92.8247 25.2202C93.6133 32.5504 94.2853 40.1824 94.2853 47.9996C94.2853 55.8167 93.6133 63.4487 92.8247 70.779C92.1986 76.3783 89.6915 81.5996 85.7131 85.5892C81.7347 89.5788 76.5205 92.1006 70.923 92.7424C63.5584 93.5653 55.8716 94.2853 47.9996 94.2853C40.1276 94.2853 32.4407 93.5653 25.0762 92.7424C19.4786 92.1006 14.2644 89.5788 10.2861 85.5892C6.3077 81.5996 3.80052 76.3783 3.17444 70.779C2.38587 63.4487 1.71387 55.8167 1.71387 47.9996C1.71387 40.1824 2.38587 32.5504 3.17444 25.2202C3.80052 19.6208 6.3077 14.3996 10.2861 10.41C14.2644 6.42042 19.4786 3.89856 25.0762 3.25672ZM57.1333 19.7619C56.8966 18.7359 56.2904 17.8329 55.4304 17.2253C54.5705 16.6176 53.5169 16.3478 52.4708 16.4674C51.4246 16.5869 50.4591 17.0874 49.7583 17.8734C49.0576 18.6593 48.6708 19.6758 48.6716 20.7287V60.3424C48.6716 62.4473 48.0474 64.5049 46.878 66.255C45.7086 68.0051 44.0465 69.3691 42.1019 70.1746C40.1573 70.9801 38.0175 71.1909 35.9531 70.7802C33.8887 70.3696 31.9924 69.356 30.5041 67.8677C29.0157 66.3793 28.0021 64.483 27.5915 62.4186C27.1809 60.3542 27.3916 58.2144 28.1971 56.2698C29.0026 54.3252 30.3666 52.6631 32.1168 51.4937C33.8669 50.3243 35.9244 49.7002 38.0293 49.7002C39.1659 49.7002 40.256 49.2486 41.0598 48.4449C41.8635 47.6412 42.315 46.5511 42.315 45.4144C42.315 44.2778 41.8635 43.1877 41.0598 42.384C40.256 41.5803 39.1659 41.1287 38.0293 41.1287C34.2292 41.1287 30.5144 42.2556 27.3547 44.3668C24.195 46.4781 21.7324 49.4788 20.2781 52.9897C18.8239 56.5005 18.4434 60.3638 19.1848 64.0909C19.9261 67.8179 21.7561 71.2415 24.4431 73.9286C27.1302 76.6157 30.5538 78.4456 34.2809 79.187C38.008 79.9283 41.8712 79.5478 45.3821 78.0936C48.8929 76.6394 51.8937 74.1767 54.0049 71.017C56.1161 67.8573 57.243 64.1426 57.243 60.3424V36.411C61.3573 39.9082 66.6647 41.8282 72.891 41.8282C74.0277 41.8282 75.1177 41.3766 75.9215 40.5729C76.7252 39.7692 77.1767 38.6791 77.1767 37.5424C77.1767 36.4058 76.7252 35.3157 75.9215 34.512C75.1177 33.7083 74.0277 33.2567 72.891 33.2567C68.3653 33.2567 65.0053 31.8579 62.5299 29.6567C60.0064 27.4076 58.1344 24.0613 57.1333 19.7619Z" fill="currentColor"/>
-              </svg>  
-            </a>
-            {/* Facebook */}
-            <a
-              href="tel:88694022"
-              aria-label="Call"
-              className=" w-[42px] h-[42px] sm:w-[50px] sm:h-[50px] md:w-[55px] md:h-[55px] flex items-center justify-center hover:opacity-80 transition">
-              <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"  className={`${isWhiteTheme ? "text-[#FFFADC]" : "text-[#CE2C20]" }`}>
-                <g clip-path="url(#clip0_4_81)">
-                  <path d="M48 0C21.4903 0 0 21.4903 0 48C0 74.5097 21.4903 96 48 96C74.5097 96 96 74.5097 96 48C96 21.4903 74.5097 0 48 0ZM30.75 19.0664C31.739 19.0081 32.6329 19.5992 33.3106 20.6484L39.873 33.0937C40.564 34.5684 40.1714 36.1474 39.1406 37.2011L36.1348 40.207C35.9493 40.4612 35.8272 40.7475 35.8242 41.0624C36.977 45.5244 40.4736 49.6402 43.5587 52.4706C46.6437 55.301 49.9594 59.1331 54.2637 60.041C54.7957 60.1894 55.4474 60.2426 55.8282 59.8887L59.3203 56.3321C60.5258 55.4184 62.2696 54.9756 63.5566 55.7227H63.6152L75.4569 62.713C77.1951 63.8025 77.3752 65.9085 76.1307 67.1895L67.9746 75.2813C66.7702 76.5165 65.17 76.9318 63.6154 76.9336C56.7395 76.7276 50.2427 73.3529 44.9064 69.8848C36.1472 63.5126 28.1126 55.6091 23.0684 46.0606C21.1338 42.0566 18.8613 36.9478 19.0782 32.4786C19.0975 30.7974 19.5524 29.1502 20.7364 28.0666L28.8926 19.9103C29.528 19.3697 30.1566 19.1014 30.75 19.0664Z" fill="currentColor"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_4_81">
-                  <rect width="96" height="96" fill="currentColor"/>
-                  </clipPath>
-                  </defs>
-                </svg>
-            </a>
-
           </div>
         </div>
-
-        {/* Right: Order Now */}
-        <div>
-          <Link
-            href="/menu"
-            className={`font-dincondensed font-bold ${isWhiteTheme ? "text-[#FFFADC]" : "text-[#CE2C20]" } text-[36px] sm:text-[45px] md:text-[60px] leading-none`}
-          >
-            ORDER NOW
-          </Link>
+        <div className="flex flex-col gap-2 border-t border-brand-cream/20 pt-4 text-[13px] opacity-80 sm:flex-row sm:justify-between">
+          <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
+          <span>Prices subject to GST and service charge.</span>
         </div>
       </div>
     </footer>
