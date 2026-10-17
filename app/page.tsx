@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { OpenNowBadge } from "@/components/OpenNowBadge";
 import { PressSection } from "@/components/PressSection";
+import { InstagramSection } from "@/components/InstagramSection";
 import { SectionHeading } from "@/components/SectionHeading";
 import { IconArrow, IconClock, IconPin, IconTruck } from "@/components/Icons";
 import { categoryLinks, featured, findItem } from "@/lib/menu";
@@ -198,20 +199,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SOCIAL */}
-        <section aria-labelledby="social-h" className="py-11 md:py-16">
-          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 sm:px-6 md:gap-6">
-            <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
-              <h2 id="social-h" className="display text-[40px] leading-none text-brand-navy md:text-[52px]">Fresh from the kitchen</h2>
-              <a href={site.social.instagram} target="_blank" rel="noopener" className="font-semibold">{site.social.instagramHandle} on Instagram →</a>
-            </div>
-            <ul className="grid grid-cols-2 gap-2.5 md:grid-cols-3 md:gap-4">
-              <li><Image src="/images/mood-bowls-red-backdrop.webp" alt="Bowls of lu rou fan, beef noodles and xiao long bao on a red table" width={479} height={669} sizes="(max-width: 768px) 50vw, 33vw" className="aspect-[4/5] w-full rounded-2xl object-cover" /></li>
-              <li><Image src="/images/mood-chicken-cutlet-rice-hand.webp" alt="Chicken cutlet egg rice held up with chopsticks" width={800} height={1202} sizes="(max-width: 768px) 50vw, 33vw" className="aspect-[4/5] w-full rounded-2xl object-cover" /></li>
-              <li className="hidden md:block"><Image src="/images/mood-crew-tee-apron.webp" alt="886 crew member in a black 886 tee and red apron at the stove" width={445} height={667} sizes="33vw" className="aspect-[4/5] w-full rounded-2xl object-cover" /></li>
-            </ul>
-          </div>
-        </section>
+        {/* SOCIAL — latest Instagram posts */}
+        <InstagramSection />
       </main>
     </>
   );
